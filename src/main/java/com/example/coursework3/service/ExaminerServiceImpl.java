@@ -18,7 +18,7 @@ public class ExaminerServiceImpl implements ExaminerService {
 
     @Override
     public Collection<Question> getQuestions(int amount) {
-        if (javaQuestionService.list.size() < amount) {
+        if (javaQuestionService.getCount() < amount) {
             throw new IllegalQuestionsAmount();
         }
         List<Question> questions = new ArrayList<>(amount);

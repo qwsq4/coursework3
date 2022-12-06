@@ -1,5 +1,8 @@
 package com.example.coursework3.model;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.ModelAttribute;
+
 import java.util.Objects;
 
 public class Question {
