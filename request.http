@@ -1,0 +1,8 @@
+### Создание вопроса
+POST http://localhost:8080/exam/java/add/Question3,Answer3
+
+### Получение всех вопросов
+GET http://localhost:8080/exam/java
+
+### Удаление вопроса
+POST http://localhost:8080/exam/java/remove/Question3,Answer3
