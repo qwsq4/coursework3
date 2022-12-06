@@ -1,8 +1,17 @@
-### Создание вопроса
-POST http://localhost:8080/exam/java/add/Question3,Answer3
+### Создание вопроса 1
+POST http://localhost:8080/exam/java/add/question=Question1,answer=Answer1
+
+### Создание вопроса 2
+POST http://localhost:8080/exam/java/add/question=Question2,answer=Answer2
+
+### Создание вопроса 3
+POST http://localhost:8080/exam/java/add/question=Question3,answer=Answer3
 
 ### Получение всех вопросов
 GET http://localhost:8080/exam/java
 
 ### Удаление вопроса
-POST http://localhost:8080/exam/java/remove/Question3,Answer3
+POST http://localhost:8080/exam/java/remove/question=Question3,answer=Answer3
+
+### Получение случайных вопросов
+GET http://localhost:8080/exam/get/5
