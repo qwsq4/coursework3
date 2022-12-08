@@ -4,13 +4,11 @@ import com.example.coursework3.exception.IllegalQuestionsAmount;
 import com.example.coursework3.model.Question;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 @Service
 public class ExaminerServiceImpl implements ExaminerService {
-    JavaQuestionService javaQuestionService;
+    private final JavaQuestionService javaQuestionService;
 
     public ExaminerServiceImpl(JavaQuestionService javaQuestionService) {
         this.javaQuestionService = javaQuestionService;
@@ -21,7 +19,7 @@ public class ExaminerServiceImpl implements ExaminerService {
         if (javaQuestionService.getCount() < amount) {
             throw new IllegalQuestionsAmount();
         }
-        List<Question> questions = new ArrayList<>(amount);
+        Set<Question> questions = new HashSet<>(amount);
 
         while (questions.size() < amount) {
             Question q = javaQuestionService.getRandomQuestion();

@@ -1,6 +1,5 @@
 package com.example.coursework3.controller;
 
-import com.example.coursework3.exception.IllegalQuestionsAmount;
 import com.example.coursework3.model.Question;
 import com.example.coursework3.service.ExaminerServiceImpl;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +10,7 @@ import java.util.Collection;
 
 @RestController
 public class ExamController {
-    ExaminerServiceImpl examinerService;
+    private final ExaminerServiceImpl examinerService;
 
     public ExamController(ExaminerServiceImpl examinerService) {
         this.examinerService = examinerService;

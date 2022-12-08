@@ -3,18 +3,15 @@ package com.example.coursework3.service;
 import com.example.coursework3.exception.IllegalQuestionsAmount;
 import com.example.coursework3.model.Question;
 import org.assertj.core.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.junit.jupiter.api.function.Executable;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.web.server.ResponseStatusException;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @ExtendWith(MockitoExtension.class)
 public class ExaminerServiceTest {
@@ -30,7 +27,7 @@ public class ExaminerServiceTest {
     void getQuestions() {
         Mockito.when(javaQuestionService.getCount()).thenReturn(1);
         Mockito.when(javaQuestionService.getRandomQuestion()).thenReturn(question);
-        List<Question> list = new ArrayList<>();
+        Set<Question> list = new HashSet<>();
         list.add(question);
         Assertions.assertThat(examinerService.getQuestions(1)).isEqualTo(list);
     }
